@@ -19,3 +19,12 @@ module.exports = async function getCountries() {
         });
     return result; // The contest data is returned
 };
+
+function helloWorld() {
+    console.log('Hello World!');
+}
+
+module.exports = {
+    helloWorld: helloWorld,
+    getCountries: getCountries
+}
