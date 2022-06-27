@@ -58,7 +58,7 @@ To assign an api key to the client use the client() method.
 ``` javascript
 smspool.client("<your-api-key>");
 ```
-[Copy your api key at the botom of the page](https://www.smspool.net/my/settings)
+[Get your api key here](https://www.smspool.net/my/settings#apikey)
 
 ---
 
