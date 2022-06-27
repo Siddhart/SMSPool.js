@@ -179,7 +179,7 @@ async function extendRental(rental_code, days) {
 
 module.exports = {
     //main
-    client, client,
+    client: client,
     getCountries: getCountries,
     getServices: getServices,
     getCountryServices: getCountryServices,
