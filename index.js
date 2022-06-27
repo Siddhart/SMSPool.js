@@ -188,7 +188,7 @@ module.exports = {
     getActiveOrders: getActiveOrders,
 
     //sms
-    getSMSServicePrice, getSMSServicePrice,
+    getSMSServicePrice: getSMSServicePrice,
     purchaseSMS: purchaseSMS,
     checkSMS: checkSMS,
     resendSMS: resendSMS,
