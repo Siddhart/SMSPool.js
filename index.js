@@ -1,27 +1,206 @@
-// module.exports exports the function getContests as a promise and exposes it as a module.
-// we can import an exported module by using require().
-async function getCountries() {
-    const axios = require("axios"); // Importing the Axios module to make API requests
-    var result;
 
-    await axios // Making a GET request using axios and requesting information from the API
-        .get(
-            "https://smspool.net/api/country/retrieve_all"
-        )
-        .then((response) => { // If the GET request is successful, this block is executed
-            result = response; // The response of the API call is passed on to the next block
-        })
-        .catch((err) => {
-            console.log(err); // Error handler
-        });
-    return result; // The contest data is returned
-};
+var apiKey;
 
-function helloWorld() {
-    console.log('Hello World!');
+//Function START
+function client(key) {
+    apiKey = key;
 }
 
+async function requestURL(url) {
+    const axios = require("axios");
+
+    var result = "{}";
+    await axios
+        .get(
+            url
+        )
+        .then((response) => {
+            result = response.data;
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+    return result;
+}
+
+function generateURL(endpoint, params) {
+    return endpoint.toString() + "?" + new URLSearchParams(params).toString();
+}
+
+function checkApiKey() {
+    if (apiKey == null) {
+        console.error("PLEASE ENTER YOUR API KEY!");
+        return false;
+    }
+    return true;
+}
+
+//Function END
+
+//Main START
+async function getCountries() {
+    return requestURL(generateURL("https://smspool.net/api/country/retrieve_all", {}));
+};
+
+async function getServices() {
+    return requestURL(generateURL("https://smspool.net/api/service/retrieve_all", {}));
+};
+
+async function getCountryServices(country) {
+    return requestURL(generateURL("https://www.smspool.net/api/service/retrieve_all", { country: country }));
+}
+
+async function getBalance() {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/request/balance", { key: apiKey }));
+    }
+
+    return {};
+}
+
+async function getOrderHistory() {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://www.smspool.net/api/request/history", { key: apiKey }));
+
+    }
+    return {};
+}
+
+async function getActiveOrders() {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/request/active", { key: apiKey }));
+
+    }
+    return {};
+}
+
+//Main END
+
+//SMS START
+async function getSMSServicePrice(country, service) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/request/price", { key: apiKey, country: country, service: service }));
+    }
+    return {};
+}
+
+async function purchaseSMS(country, service, pool) {
+    let params = { key: apiKey, country: country, service: service }
+
+    if (pool != null) {
+        params.pool = pool;
+    }
+
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/purchase/sms", params));
+    }
+    return {};
+}
+
+async function checkSMS(orderId) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/sms/check", { key: apiKey, orderid: orderId }));
+    }
+    return {};
+}
+
+async function resendSMS(orderId) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/sms/resend", { key: apiKey, orderid: orderId }));
+    }
+    return {};
+}
+
+async function cancelSMS(orderId) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/sms/cancel", { key: apiKey, orderid: orderId }));
+    }
+    return {};
+}
+
+async function archiveSMSOrders() {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://www.smspool.net/api/request/archive", { key: apiKey }));
+    }
+    return {};
+}
+
+//SMS END
+
+//RENTALS START
+async function getRentals(type) {
+    let typeParam = type ? 1 : 0; // one-time = 0 | extendable = 1 (default)
+
+    return requestURL(generateURL("https://smspool.net/api/rental/retrieve_all", { type: typeParam }));
+}
+
+async function purchaseRental(rentalID, days, service_id) {
+    let params = { key: apiKey, id: rentalID, days: days }
+
+    if (service_id != null) {
+        params.service_id = service_id;
+    }
+
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/purchase/rental", params));
+    }
+    return {};
+}
+
+async function getRentalMessage(rental_code) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/rental/retrieve_messages", { key: apiKey, rental_code: rental_code }));
+    }
+    return {};
+}
+
+async function getRentalStatus(rental_code) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/rental/retrieve_status.php", { key: apiKey, rental_code: rental_code }));
+    }
+    return {};
+}
+
+async function refundRental(rental_code) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/rental/refund.php", { key: apiKey, rental_code: rental_code }));
+    }
+    return {};
+}
+
+async function extendRental(rental_code, days) {
+    if (checkApiKey()) {
+        return requestURL(generateURL("https://smspool.net/api/rental/extend.php", { key: apiKey, days: days, rental_code: rental_code }));
+    }
+    return {};
+}
+
+//RENTALS END
+
 module.exports = {
+    //main
+    client, client,
     getCountries: getCountries,
-    helloWorld: helloWorld
+    getServices: getServices,
+    getCountryServices: getCountryServices,
+    getBalance: getBalance,
+    getOrderHistory: getOrderHistory,
+    getActiveOrders: getActiveOrders,
+
+    //sms
+    getSMSServicePrice, getSMSServicePrice,
+    purchaseSMS: purchaseSMS,
+    checkSMS: checkSMS,
+    resendSMS: resendSMS,
+    cancelSMS: cancelSMS,
+    archiveSMSOrders: archiveSMSOrders,
+
+    //rentals
+    getRentals: getRentals,
+    purchaseRental: purchaseRental,
+    getRentalMessage: getRentalMessage,
+    getRentalStatus: getRentalStatus,
+    refundRental: refundRental,
+    extendRental: extendRental
 }
