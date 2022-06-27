@@ -1,8 +1,10 @@
 # SMSPool.js
-Unofficial API wrapper for [SMSPool.net](https://www.smspool.net/). With this wrapper you are able to call all endpoints with functions.
-
+Unofficial API wrapper for [SMSPool.net](https://www.smspool.net/). With this wrapper you are able to call all endpoints with functions.  
+[Join the SMSPool.net Discord server](https://discord.gg/Rcb526SEFw).
+<br>
+<br>
 ## Table Of Contents
-- [SMSPool.net Documentation]([https://www.smspool.net/article/how-to-use-the-smspool-api](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#smspoolnet-api-documentation))
+- [SMSPool.net Documentation](https://github.com/Siddhart/SMSPool.js/edit/main/README.md#smspoolnet-api-documentation)
 - [Getting Started](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getting-started)
 - [Main Documentation](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#main-documentation)
     - [client()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#client)
@@ -25,11 +27,12 @@ Unofficial API wrapper for [SMSPool.net](https://www.smspool.net/). With this wr
     - [getRentalMessage(rental_code)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getrentalmessagerental_code)
     - [getRentalStatus(rental_code)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getrentalstatusrental_code)
     - [refundRental(rental_code)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#refundrentalrental_code)
-    - [extendRental(rental_code, days)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#extendrentalrental_code-days)
+    - [extendRental(rental_code, days)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#extendrentalrental_code-days)  
+<br>
 
 ## SMSpool.net API Documentation
 Checkout the official API documentation here [https://www.smspool.net/article/how-to-use-the-smspool-api](https://www.smspool.net/article/how-to-use-the-smspool-api#).
-
+<br>  
 ## Getting Started
 To get started you have to install the smspool npm package
 ```
@@ -46,6 +49,7 @@ smspool.client("<api-key>");
     console.log(result);
 }())
 ```
+<br>
 
 # Main Documentation
 
@@ -175,6 +179,7 @@ Response:
 ```
 [Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#active_orders_endpoint)  
 
+<br>
 
 # SMS Documentation
 
@@ -294,6 +299,8 @@ Response:
 }
 ```
 [Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#archive_sms_endpoint)  
+
+<br>
 
 # Rentals Documentation
 
