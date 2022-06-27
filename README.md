@@ -2,11 +2,30 @@
 Unofficial API wrapper for [SMSPool.net](https://www.smspool.net/). With this wrapper you are able to call all endpoints with functions.
 
 ## Table Of Contents
-- [SMSPool.net Documentation](https://www.smspool.net/article/how-to-use-the-smspool-api)
-- [Getting Started](https://www.google.com)
-- [Main Documentation](https://www.google.com)
-- [SMS Documentation](https://www.google.com)
-- [Rentals Documentation](https://www.google.com)
+- [SMSPool.net Documentation]([https://www.smspool.net/article/how-to-use-the-smspool-api](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#smspoolnet-api-documentation))
+- [Getting Started](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getting-started)
+- [Main Documentation](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#main-documentation)
+    - [client()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#client)
+    - [getCountries()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getcountries)
+    - [getServices()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getservices)
+    - [getCountryServices(country)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getcountryservicescountry)
+    - [getBalance()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getbalance)
+    - [getOrderHistory()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getorderhistory)
+    - [getActiveOrders()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getactiveorders)
+- [SMS Documentation](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#sms-documentation)
+    - [getSMSServicePrice(country, service)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getsmsservicepricecountry-service)
+    - [purchaseSMS(country, service, pool)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#purchasesmscountry-service-poolnot-required)
+    - [checkSMS(orderID)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#checksmsorderid)
+    - [resendSMS(orderID)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#resendsmsorderid)
+    - [cancelSMS(orderID)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#cancelsmsorderid)
+    - [archiveSMSOrders(orderID)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#archivesmsordersorderid)
+- [Rentals Documentation](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#sms-documentation)
+    - [getRentals(type)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getrentalstype)
+    - [purchaseRental(rentalID, days, service_id)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#purchaserentalrentalid-days-service_id)
+    - [getRentalMessage(rental_code)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getrentalmessagerental_code)
+    - [getRentalStatus(rental_code)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getrentalstatusrental_code)
+    - [refundRental(rental_code)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#refundrentalrental_code)
+    - [extendRental(rental_code, days)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#extendrentalrental_code-days)
 
 ## SMSpool.net API Documentation
 Checkout the official API documentation here [https://www.smspool.net/article/how-to-use-the-smspool-api](https://www.smspool.net/article/how-to-use-the-smspool-api#).
