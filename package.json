@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Siddhart/SMSPool.js#readme",
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "smspool.js": "^1.0.8"
   }
 }

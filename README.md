@@ -10,7 +10,6 @@ Unofficial API wrapper for [SMSPool.net](https://www.smspool.net/). With this wr
     - [client()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#client)
     - [getCountries()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getcountries)
     - [getServices()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getservices)
-    - [getCountryServices(country)](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getcountryservicescountry)
     - [getBalance()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getbalance)
     - [getOrderHistory()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getorderhistory)
     - [getActiveOrders()](https://github.com/Siddhart/SMSPool.js/blob/main/README.md#getactiveorders)
@@ -91,31 +90,6 @@ Response:
 
 ### getServices()
 Returns a list of all services.
-
-Response:
-```json
-[
-  {
-    "ID": "1",
-    "name": "service1"
-  },
-  {
-    "ID": "2",
-    "name": "service2"
-  },
-  {
-    "ID": "3",
-    "name": "service3"
-  },
-]
-```
-[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#service_endpoint)  
-
----
-
-### getCountryServices(country)
-Returns a list of all the services for a specific country.  
-`country` = Use either the country number or country code required to retrieve services by country.
 
 Response:
 ```json

@@ -42,13 +42,15 @@ async function getCountries() {
     return requestURL(generateURL("https://smspool.net/api/country/retrieve_all", {}));
 };
 
-async function getServices() {
-    return requestURL(generateURL("https://smspool.net/api/service/retrieve_all", {}));
-};
+async function getServices(country) {
+    let params = {};
 
-async function getCountryServices(country) {
-    return requestURL(generateURL("https://www.smspool.net/api/service/retrieve_all", { country: country }));
-}
+    if(country != null){
+        params.country = country
+    }
+
+    return requestURL(generateURL("https://smspool.net/api/service/retrieve_all", params));
+};
 
 async function getBalance() {
     if (checkApiKey()) {
@@ -182,7 +184,6 @@ module.exports = {
     client: client,
     getCountries: getCountries,
     getServices: getServices,
-    getCountryServices: getCountryServices,
     getBalance: getBalance,
     getOrderHistory: getOrderHistory,
     getActiveOrders: getActiveOrders,
