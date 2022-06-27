@@ -1,6 +1,6 @@
 // module.exports exports the function getContests as a promise and exposes it as a module.
 // we can import an exported module by using require().
-module.exports = async function getCountries() {
+async function getCountries() {
     const axios = require("axios"); // Importing the Axios module to make API requests
     var result;
 
@@ -25,6 +25,6 @@ function helloWorld() {
 }
 
 module.exports = {
-    helloWorld: helloWorld,
-    getCountries: getCountries
+    getCountries: getCountries,
+    helloWorld: helloWorld
 }
