@@ -54,6 +54,7 @@ To assign an api key to the client use the client() method.
 ``` javascript
 smspool.client("<your-api-key>");
 ```
+[Copy your api key at the botom of the page](https://www.smspool.net/my/settings)
 
 ---
 
@@ -80,6 +81,7 @@ Response:
   },
 ]
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#country_endpoint)  
 
 ---
 
@@ -103,6 +105,7 @@ Response:
   },
 ]
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#service_endpoint)  
 
 ---
 
@@ -127,6 +130,7 @@ Response:
   },
 ]
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#service_endpoint)  
 
 ---
 
@@ -140,13 +144,15 @@ Response:
   "balance": "1.00"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#balance_endpoint)  
 
 ---
 
 ### getOrderHistory()
 Returns a list of all orders.  
-API Key required!
+API Key required!  
 
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#order_history_endpoint)  
 ---
 
 ### getActiveOrders()
@@ -167,6 +173,8 @@ Response:
    "expiry":"1653420607"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#active_orders_endpoint)  
+
 
 # SMS Documentation
 
@@ -191,6 +199,7 @@ Response:
    "expiry":"1653420607"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#price_endpoint)  
 
 ---
 
@@ -215,6 +224,7 @@ Response:
    "message":""
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#order_sms_endpoint)  
 
 ---
 
@@ -232,6 +242,7 @@ Response:
   "full_sms": "full SMS"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#check_sms_endpoint)  
 
 ---
 
@@ -249,6 +260,7 @@ Response:
   "resend":0
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#resend_sms_endpoint)  
 
 ---
 
@@ -264,6 +276,7 @@ Response:
   "success": 1
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#cancel_sms_endpoint)  
 
 ---
 
@@ -280,6 +293,7 @@ Response:
    "message":"All your inactive orders have been archived."
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#archive_sms_endpoint)  
 
 # Rentals Documentation
 
@@ -300,6 +314,7 @@ Response:
    }
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#retrieve_rentals_endpoint)  
 
 ---
 
@@ -322,6 +337,7 @@ Response:
    "expiry":"1653758381"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#order_rental_endpoint)  
 
 ---
 
@@ -352,6 +368,7 @@ Response:
    "source":"6"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#rental_messages_endpoint)  
 
 ---
 
@@ -373,6 +390,7 @@ Response:
    }
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#retrieve_rental_status_endpoint)  
 
 ---
 
@@ -389,6 +407,7 @@ Response:
    "message":"Your rental has been refunded!"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#refund_rental_endpoint)  
 
 ---
 
@@ -406,3 +425,4 @@ Response:
    "message":"Your rental has been succesfully extended!"
 }
 ```
+[Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#extend_rental_endpoint)  
