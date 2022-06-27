@@ -407,3 +407,6 @@ Response:
 }
 ```
 [Checkout the official documentation](https://www.smspool.net/article/how-to-use-the-smspool-api#extend_rental_endpoint)  
+
+## How can I contribute to this project?
+Before you start working on a feature or fix open a issue. After that fork the project and change anything you want. I will review the pull request and merge it to the main branch.
