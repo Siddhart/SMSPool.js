@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Siddhart/SMSPool.js/issues"
   },
-  "homepage": "https://github.com/Siddhart/SMSPool.js#readme"
+  "homepage": "https://github.com/Siddhart/SMSPool.js#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
 }
