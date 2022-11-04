@@ -39,7 +39,7 @@ function checkApiKey() {
 
 //Main START
 async function getCountries() {
-    return requestURL(generateURL("https://smspool.net/api/country/retrieve_all", {}));
+    return requestURL(generateURL("https://api.smspool.net/country/retrieve_all", {}));
 };
 
 async function getServices(country) {
@@ -49,12 +49,12 @@ async function getServices(country) {
         params.country = country
     }
 
-    return requestURL(generateURL("https://smspool.net/api/service/retrieve_all", params));
+    return requestURL(generateURL("https://api.smspool.net/service/retrieve_all", params));
 };
 
 async function getBalance() {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/request/balance", { key: apiKey }));
+        return requestURL(generateURL("https://api.smspool.net/request/balance", { key: apiKey }));
     }
 
     return {};
@@ -62,7 +62,7 @@ async function getBalance() {
 
 async function getOrderHistory() {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://www.smspool.net/api/request/history", { key: apiKey }));
+        return requestURL(generateURL("https://api.smspool.net/request/history", { key: apiKey }));
 
     }
     return {};
@@ -70,7 +70,7 @@ async function getOrderHistory() {
 
 async function getActiveOrders() {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/request/active", { key: apiKey }));
+        return requestURL(generateURL("https://api.smspool.net/request/active", { key: apiKey }));
 
     }
     return {};
@@ -81,7 +81,7 @@ async function getActiveOrders() {
 //SMS START
 async function getSMSServicePrice(country, service) {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/request/price", { key: apiKey, country: country, service: service }));
+        return requestURL(generateURL("https://api.smspool.net/request/price", { key: apiKey, country: country, service: service }));
     }
     return {};
 }
@@ -94,35 +94,35 @@ async function purchaseSMS(country, service, pool) {
     }
 
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/purchase/sms", params));
+        return requestURL(generateURL("https://api.smspool.net/purchase/sms", params));
     }
     return {};
 }
 
 async function checkSMS(orderId) {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/sms/check", { key: apiKey, orderid: orderId }));
+        return requestURL(generateURL("https://api.smspool.net/sms/check", { key: apiKey, orderid: orderId }));
     }
     return {};
 }
 
 async function resendSMS(orderId) {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/sms/resend", { key: apiKey, orderid: orderId }));
+        return requestURL(generateURL("https://api.smspool.net/sms/resend", { key: apiKey, orderid: orderId }));
     }
     return {};
 }
 
 async function cancelSMS(orderId) {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/sms/cancel", { key: apiKey, orderid: orderId }));
+        return requestURL(generateURL("https://api.smspool.net/sms/cancel", { key: apiKey, orderid: orderId }));
     }
     return {};
 }
 
 async function archiveSMSOrders() {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://www.smspool.net/api/request/archive", { key: apiKey }));
+        return requestURL(generateURL("https://api.smspool.net/request/archive", { key: apiKey }));
     }
     return {};
 }
@@ -133,7 +133,7 @@ async function archiveSMSOrders() {
 async function getRentals(type) {
     let typeParam = type ? 1 : 0; // one-time = 0 | extendable = 1 (default)
 
-    return requestURL(generateURL("https://smspool.net/api/rental/retrieve_all", { type: typeParam }));
+    return requestURL(generateURL("https://api.smspool.net/rental/retrieve_all", { type: typeParam }));
 }
 
 async function purchaseRental(rentalID, days, service_id) {
@@ -144,14 +144,14 @@ async function purchaseRental(rentalID, days, service_id) {
     }
 
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/purchase/rental", params));
+        return requestURL(generateURL("https://api.smspool.net/purchase/rental", params));
     }
     return {};
 }
 
 async function getRentalMessage(rental_code) {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/rental/retrieve_messages", { key: apiKey, rental_code: rental_code }));
+        return requestURL(generateURL("https://api.smspool.net/rental/retrieve_messages", { key: apiKey, rental_code: rental_code }));
     }
     return {};
 }
@@ -165,14 +165,14 @@ async function getRentalStatus(rental_code) {
 
 async function refundRental(rental_code) {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/rental/refund.php", { key: apiKey, rental_code: rental_code }));
+        return requestURL(generateURL("https://api.smspool.net/rental/refund.php", { key: apiKey, rental_code: rental_code }));
     }
     return {};
 }
 
 async function extendRental(rental_code, days) {
     if (checkApiKey()) {
-        return requestURL(generateURL("https://smspool.net/api/rental/extend.php", { key: apiKey, days: days, rental_code: rental_code }));
+        return requestURL(generateURL("https://api.smspool.net/rental/extend.php", { key: apiKey, days: days, rental_code: rental_code }));
     }
     return {};
 }
